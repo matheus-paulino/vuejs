@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva V-ONCE</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" placeholder="Digite algo aqui...." v-model="name">
+        <h1 v-once>{{ name }}</h1>
+        <p> {{ name }}</p>
+    </div>
+
+    <script>
+        /**
+         * Diretiva v-once
+         *  Para que serve?
+         *  O valor fica imutável 
+         *  Não tem limite de immpressões
+         */
+        new Vue({
+            el: '#app',
+            data: {
+                name: 'Estou aprendendo vuejs'
+            }
+        });
+    </script>
+</body>
+</html>
