@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Way Databinding</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input 
+        type="text"
+        placeholder="Informe seu nome" 
+        v-model="name">
+        <p>{{ name }}</p>
+    </div>
+
+    <script>
+        /**
+         * Two Way Databinding
+         *  Pego o valor do name no input e altero aonde tem o {{ name }}
+         *  Utilizo o v-model
+         *  Não tem limite de immpressões
+         */
+        new Vue({
+            el: '#app',
+            data: {
+                name: ''
+            }
+        });
+    </script>
+</body>
+</html>
