@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Binding - VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <h2>{{ sub_title }}</h2>
+        <p>{{ isActive ? 'Ativo' : 'Inativo' }}</p>
+        <a :href="url" :title="textVue">Meu Github</a>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                title: 'Meu título',
+                sub_title: 'Meu subtitulo',
+                isActive: true,
+                // Para ref links, usar a diretiva do vueJS :href ou v-bind:href
+                url: 'https://github.com/matheus-paulino/vuejs',
+
+                
+                textVue: 'Estou aprendendo sobre VueJS :D'
+            }
+        });
+    </script>
+</body>
+</html>
