@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos com o teclado</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" @keyup.delete="changeValue" />
+      <hr />
+      <!--
+          Posso fazer combinações de teclas
+          Posso passar N eventos em uma só tag
+      -->
+      <input type="text" @keyup.enter.delete="changeValue" />
+
+      {{ valueText }}
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          valueText: "",
+        },
+        methods: {
+          changeValue(event) {
+            this.valueText = event.target.value;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

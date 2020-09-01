@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos no VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+
+        <hr>
+
+        <button @click="count--">Dercrementar - 1</button>
+        {{ count }}
+        <button @click="count++">Incrementar + 1</button>
+
+
+    </div>
+
+    <script>
+        /**
+         * Eventos no VueJS
+         *  v-on:aqui-coloco-ação="algumaacoisa" - Fique escutando a propriedade
+         */
+        new Vue({
+            el: '#app',
+            data: {
+                count: 0
+            }
+        });
+    </script>
+</body>
+</html>

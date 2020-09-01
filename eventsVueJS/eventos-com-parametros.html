@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva V-ONCE</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="decrementTwo(2)">Decrementar -2</button>
+        <input type="text" @keyup="changeInput">
+        <input type="number" @keyup="changeInputThree(2, $event)">
+        <button @click="incrementTwo(2)">Incrementar +2</button>
+
+        {{ count }}
+
+    </div>
+
+    <script>
+        /**
+         * Eventos no VueJS
+         *  v-on:aqui-coloco-ação="algumaacoisa" - Fique escutando a propriedade
+         */
+        new Vue({
+            el: '#app',
+            data: {
+                count: 0
+            },
+            methods: {
+                changeInput(event) {
+                    console.log(event.target.value)
+                },
+
+                changeInputThree(value, evenet) {
+                    value += parseInt(event.target.value)
+                    this.count += value
+                },
+
+                incrementTwo(value) {
+                    this.count += value;
+                },
+
+                decrementTwo(value) {
+                    this.count =- value;
+                },
+            }
+        });
+    </script>
+</body>
+</html>
